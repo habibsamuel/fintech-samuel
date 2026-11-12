@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Démonstration du widget flottant de traduction Fulfulde." />
+    <title>Démo — traduction Fulfulde</title>
+    <link rel="stylesheet" href="demo.css" />
+    <script type="module" src="widget.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#accueil" aria-label="SamBank, accueil"><span class="brand-mark" aria-hidden="true">S</span> SamBank</a>
+      <nav aria-label="Navigation principale">
+        <a href="#compte">Mon compte</a>
+        <a href="#services">Services</a>
+        <a href="#historique">Historique</a>
+      </nav>
+      <span class="demo-tag">DÉMONSTRATION</span>
+    </header>
+    <main id="accueil">
+      <section class="welcome">
+        <p class="eyebrow">VOTRE ESPACE BANCAIRE</p>
+        <h1>Bonjour, bienvenue</h1>
+        <p>Consultez votre compte et gérez vos services en toute simplicité.</p>
+      </section>
+      <section class="grid" aria-label="Aperçu du compte">
+        <article class="card balance" id="compte">
+          <div class="card-heading"><div><p class="eyebrow">COMPTE PRINCIPAL</p><h2>Solde disponible</h2></div><span class="icon" aria-hidden="true">◉</span></div>
+          <p class="amount">245 000 <span>FCFA</span></p>
+          <p class="muted">Mis à jour aujourd'hui</p>
+          <a class="action-link" href="#details">Voir les détails <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="card services" id="services">
+          <div class="card-heading"><div><p class="eyebrow">À PORTÉE DE MAIN</p><h2>Services rapides</h2></div><span class="icon lilac" aria-hidden="true">✦</span></div>
+          <div class="service-list">
+            <a href="#transfert"><span class="service-icon">↗</span><span><b>Transfert d'argent</b><small>Envoyer de l'argent</small></span><span class="arrow">→</span></a>
+            <a href="#paiement"><span class="service-icon blue">▣</span><span><b>Paiement de facture</b><small>Régler vos factures</small></span><span class="arrow">→</span></a>
+            <a href="#retrait"><span class="service-icon orange">＋</span><span><b>Retrait</b><small>Retirer de l'argent</small></span><span class="arrow">→</span></a>
+          </div>
+        </article>
+        <article class="card history" id="historique">
+          <div class="card-heading"><div><p class="eyebrow">VOS OPÉRATIONS</p><h2>Activité récente</h2></div><a class="action-link" href="#tout">Tout voir</a></div>
+          <ul class="transactions">
+            <li><span class="transaction-icon incoming">↓</span><span><b>Virement reçu</b><small>Aujourd'hui · 09:42</small></span><strong class="positive">+ 50 000 FCFA</strong></li>
+            <li><span class="transaction-icon">▣</span><span><b>Paiement de facture</b><small>Hier · 16:18</small></span><strong>− 12 500 FCFA</strong></li>
+            <li><span class="transaction-icon">↗</span><span><b>Recharge mobile</b><small>12 novembre · 11:03</small></span><strong>− 3 000 FCFA</strong></li>
+          </ul>
+        </article>
+      </section>
+      <p class="footnote">Page de démonstration uniquement — aucune opération bancaire réelle.</p>
+    </main>
+  </body>
+</html>
