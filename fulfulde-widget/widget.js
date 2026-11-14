@@ -42,7 +42,7 @@ class FulfuldeTranslationWidget {
       return;
     }
 
-    this.shadow.innerHTML = `${css}
+    this.shadow.innerHTML = `<style>${css}</style>
       <div class="ffw-shell" part="shell">
         <section class="ffw-panel" id="ffw-panel" role="dialog" aria-labelledby="ffw-title" aria-describedby="ffw-description" hidden>
           <header class="ffw-header">
@@ -218,9 +218,9 @@ class FulfuldeTranslationWidget {
 
   async translateBatch(texts) {
     const hostTranslator = window.FulfuldeWidgetTranslate;
-    const endpoint = this.config.translationEndpoint;
+    const endpoint = this.config.translationEndpoint || "http://127.0.0.1:8000/api/v1/translate";
     if (this.consent.checked && typeof hostTranslator === "function") {
-      const result = await hostTranslator(texts, { sourceLanguage: "fr", targetLanguage: "ff" });
+      const result = await hostTranslator(texts, { sourceLanguage: "fra_Latn", targetLanguage: "fuv_Latn" });
       return this.validateTranslations(result, texts.length);
     }
     if (this.consent.checked && typeof endpoint === "string" && endpoint.trim()) {
@@ -228,7 +228,7 @@ class FulfuldeTranslationWidget {
         method: "POST",
         credentials: "omit",
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify({ sourceLanguage: "fr", targetLanguage: "ff", texts })
+        body: JSON.stringify({ source_lang: "fra_Latn", target_lang: "fuv_Latn", texts })
       });
       if (!response.ok) throw new Error(`Service de traduction indisponible (HTTP ${response.status}).`);
       const payload = await response.json();

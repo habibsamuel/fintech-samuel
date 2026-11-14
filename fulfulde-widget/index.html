@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Démonstration du widget flottant de traduction Fulfulde." />
     <title>Démo — traduction Fulfulde</title>
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="demo.css" />
+    <script>
+      window.FulfuldeWidgetConfig = {
+        translationEndpoint: "http://127.0.0.1:8000/api/v1/translate"
+      };
+    </script>
     <script type="module" src="widget.js"></script>
   </head>
   <body>
@@ -48,7 +54,7 @@
           </ul>
         </article>
       </section>
-      <p class="footnote">Page de démonstration uniquement — aucune opération bancaire réelle.</p>
+      <p class="footnote">Page de démonstration uniquement; aucune opération bancaire réelle.</p>
     </main>
   </body>
 </html>
